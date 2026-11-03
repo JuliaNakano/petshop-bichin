@@ -21,11 +21,38 @@ public class ClienteRepository {
     public Cliente buscarClientePorId(int id) {
         for (Cliente cliente : clientes) {
             if (cliente.getId() == id){
-                System.out.println("O cliente existe e é:"+cliente);
+                //System.out.println("O cliente existe e é:"+cliente);
                 return cliente;
             }
         }
-        System.out.println("O cliente solicitado pelo id não existe");
+        //System.out.println("O cliente solicitado pelo id não existe");
         return null;
+    }
+    //remove cliente
+    public boolean removerCliente(int id) {
+
+        Cliente cliente = buscarClientePorId(id);
+
+        if (cliente != null) {
+            clientes.remove(cliente);
+            return true;
+        }
+
+        return false;
+    }
+
+    //editar cliente
+    public boolean atualizarCliente(int id, String novoNome, String novoTelefone) {
+
+        Cliente cliente = buscarClientePorId(id);
+
+        if (cliente != null) {
+            cliente.setNome(novoNome);
+            cliente.setTelefone(novoTelefone);
+
+            return true;
+        }
+
+        return false;
     }
 }

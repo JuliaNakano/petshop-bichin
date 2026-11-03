@@ -22,7 +22,9 @@ void main() {
     repositorio.adicionarCliente(cliente2);
 
     //procurando pelo id
-    Cliente encontrado = repositorio.buscarClientePorId(25);
+    //Cliente encontrado = repositorio.buscarClientePorId(25);
+    repositorio.removerCliente(2);
+    repositorio.listarClientes();
 
 
     //repositorio.listarClientes();
