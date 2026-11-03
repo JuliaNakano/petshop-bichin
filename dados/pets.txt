@@ -1,0 +1,4 @@
+id;nome;especie;raca;nascimento;idCliente
+1;Rex;Cão;Labrador;12/03/2020;1
+2;Mia;Gato;Siamês;05/07/2021;2
+3;Piu;Pássaro;Calopsita;20/11/2022;3

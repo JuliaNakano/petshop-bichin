@@ -1,0 +1,6 @@
+id;nome;telefone
+1;João da Silva;(37) 99999-1111
+2;Maria Oliveira;(37) 99999-2222
+3;Carlos Souza;(37) 99999-3333
+4;Ana Paula;(37) 99999-4444
+5;Pedro Santos;(37) 99999-5555
