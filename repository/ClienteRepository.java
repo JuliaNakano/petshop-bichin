@@ -19,13 +19,26 @@ public class ClienteRepository {
 
     private ArrayList<Cliente> clientes;
 
+    // próximo código a ser gerado automaticamente (sequencial)
+    private int proximoId;
+
     public ClienteRepository() {
         // o construtor instancia a estrutura de dados interna
         this.clientes = new ArrayList<>();
+        this.proximoId = 1;
     }
 
+    // gera o próximo código sequencial para um novo cliente
+    public int gerarId() {
+        return proximoId;
+    }
+
+    // adiciona o cliente e mantém o próximo código sempre acima do maior já usado
     public void adicionar(Cliente cliente) {
         clientes.add(cliente);
+        if (cliente.getId() >= proximoId) {
+            proximoId = cliente.getId() + 1;
+        }
     }
 
     // retorna o cliente com o id informado ou null caso não exista
@@ -90,7 +103,7 @@ public class ClienteRepository {
                     int id = Integer.parseInt(campos[0].trim());
                     String nome = campos[1].trim();
                     String telefone = campos[2].trim();
-                    clientes.add(new Cliente(id, nome, telefone));
+                    adicionar(new Cliente(id, nome, telefone));
                 } catch (NumberFormatException | ArrayIndexOutOfBoundsException e) {
                     System.out.println("Linha inválida ignorada: " + linha);
                 }

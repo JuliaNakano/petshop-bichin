@@ -17,8 +17,11 @@ public class ClienteController {
         this.repository = repository;
     }
 
-    public void adicionar(int id, String nome, String telefone) {
-        repository.adicionar(new Cliente(id, nome, telefone));
+    // o código do cliente é gerado automaticamente; retorna o cliente criado
+    public Cliente adicionar(String nome, String telefone) {
+        Cliente cliente = new Cliente(repository.gerarId(), nome, telefone);
+        repository.adicionar(cliente);
+        return cliente;
     }
 
     public Cliente buscar(int id) {
